@@ -15,15 +15,15 @@ E o método contarPiada(), seria:
 
 # Herança
 
-Da mesma forma que existe uma classe Pessoa, podemos criar a classe Cachorro. 
-Então para abstrair mais, criar uma classe SerVivo, assim a classe Pessoa/Cachorro herda 
+Da mesma forma que existe uma classe Pessoa, podemos criar a classe Cachorro.
+Então para abstrair mais, criar uma classe SerVivo, assim a classe Pessoa/Cachorro herda
 atributos e comportamentos da classe SerVivo.
 
 # Encapsulamento
 
 Graças a isso, é possível eu manter uma separação entre "uso" e "funcionamento".
-Hoje eu posso usar um método que retorne x valores e em 10 anos esse mesmo método 
-retornar os mesmos valores mesmo que a implementação/consulta/tecnologia tenha sofrido 
+Hoje eu posso usar um método que retorne x valores e em 10 anos esse mesmo método
+retornar os mesmos valores mesmo que a implementação/consulta/tecnologia tenha sofrido
 alterações ao longo dos anos.
 
 INTERFACE OU CLASSE ABSTRATA?
@@ -35,3 +35,37 @@ então	a	melhor	solução	é	a	criação	de	uma	interface."
 
 # Polimorfismo
 
+Em um método de uma interface que vai ser implementada por outras classes, todas as
+classes que implementam a interface são poderão ser passadas como argumento do método.
+
+### STRATEGY ###
+
+O padrão Strategy pode ser uma boa escolha quando se há necessidade de alterar
+algum algoritmo, implementado na subclasse, a partir da classe pai em tempo de execução.
+Em contrapartida, há uma subclasse para cada algoritmo, e aumento de complexidade na
+criação do objeto.
+
+Cap 2 REÚSO POR MEIO DE HERANÇA
+
+O potencial de reúso se dá com a superclasse chamando métodos da subclasse.. Além disso,
+com o polimorfismo as instâncias das subclasses podem ser atribuídas as variáveis do
+tipo da superclasse.
+
+### NULL OBJECT ###
+
+No padrão Null Object, a classe que extende a classe original, retorna os valores
+padrões/tratados em vez de retornar null, evitando um possível NullPointerException.
+Fica implicito o que está acontecendo, porém, elimina a necessidade do uso de condicionais.
+
+### HOOK METHOD ###
+
+É uma técnica importante que é utilizada por alguns padrões, seu objetivo é permitir a
+especialização de comportamento. Isso significa que uma superclasse tem um método principal
+público no qual a subclasse deve implementar parte da lógica, permitindo ter comportamentos
+diferentes, basicamente, polimorfismo.
+
+### TEMPLATE METHOD ###
+
+### FACTORY METHOD ###
+
+### DAO ###
