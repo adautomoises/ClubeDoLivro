@@ -1,7 +1,17 @@
-// DELEGANDO COMPORTAMENTO COM COMPOSIÇÃO
-public class Main {
-    public static void main(String[] args) {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
+// DELEGANDO COMPORTAMENTO COM COMPOSIÇÃO
+public class CapTres {
+    public static void main(String[] args) {
+        ObsUm obsUm = new ObsUm();
+        ObsDois obsDois = new ObsDois();
+        ClasseObservada classeObservada = new ClasseObservada();
+        classeObservada.addObservador(obsUm);
+        classeObservada.addObservador(obsDois);
+        classeObservada.fazerAlgo("observadores");
     }
 }
 
@@ -32,3 +42,39 @@ public class Main {
 // que observam. Existem muitos pontos a serem considerados, por exemplo, cada observador pode
 // ser notificado de uma thread diferente, ou se um tiver exceção, o que ocorre com os outros?
 // Também podemos considerar ter notificações diferentes para cada alteração...
+
+interface Observador {
+    void ocorreuMudanca(String algo);
+}
+
+class ClasseObservada {
+    private final List<Observador> observadores = new ArrayList<>();
+
+    public void fazerAlgo(String algo){
+        // Execução
+        notificar(algo);
+    }
+
+    public void notificar(String algo){
+        for (Observador observador: observadores)
+            observador.ocorreuMudanca(algo);
+    }
+
+    public void addObservador(Observador observador) {
+        observadores.add(observador);
+    }
+}
+
+class ObsUm implements Observador {
+    @Override
+    public void ocorreuMudanca(String algo) {
+        System.out.println("ObsUm: "+ algo);
+    }
+}
+
+class ObsDois implements Observador {
+    @Override
+    public void ocorreuMudanca(String algo) {
+        System.out.println("ObsDois: "+ algo);
+    }
+}

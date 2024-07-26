@@ -1,6 +1,6 @@
 import java.math.BigDecimal;
 
-public class Main {
+public class CapDois {
   public static void main(String[] args){
       ClasseSecundaria classeSecundaria = new ClasseSecundaria();
       classeSecundaria.metodoGacho();

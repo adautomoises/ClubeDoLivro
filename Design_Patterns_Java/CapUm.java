@@ -1,5 +1,5 @@
 // ENTENDENDO PADRÕES DE PROJETO
-public class Main {
+public class CapUm {
   public static void main(String[] args){
     Financeiro financeiro = new Financeiro();
 
