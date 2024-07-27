@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
 
 // DELEGANDO COMPORTAMENTO COM COMPOSIÇÃO
 public class CapTres {
@@ -24,10 +22,10 @@ public class CapTres {
 // necessariamente definir uma implementação, graças ao Null Object e Hook Classes.
 
 // Hook Classes
-// Não é a mesma coisa que hook methods. Basicamente, em vez do método da classe principal ser
+// Não é o mesmo que hook methods. Basicamente, em vez do método da classe principal ser
 // especializada numa subclasse, vai existir uma relação de composição entre a classe principal
 // e a classe gancho, onde as subclasses da classe gancho vão extendê-la e assim, a classe
-// principal fica livre pra decidir qual método utilizar trocando as instâncias
+// principal fica livre para decidir qual método utilizar trocando as instâncias
 
 
 // Padrão State
@@ -50,13 +48,13 @@ interface Observador {
 class ClasseObservada {
     private final List<Observador> observadores = new ArrayList<>();
 
-    public void fazerAlgo(String algo){
+    public void fazerAlgo(String algo) {
         // Execução
         notificar(algo);
     }
 
-    public void notificar(String algo){
-        for (Observador observador: observadores)
+    public void notificar(String algo) {
+        for (Observador observador : observadores)
             observador.ocorreuMudanca(algo);
     }
 
@@ -68,13 +66,13 @@ class ClasseObservada {
 class ObsUm implements Observador {
     @Override
     public void ocorreuMudanca(String algo) {
-        System.out.println("ObsUm: "+ algo);
+        System.out.println("ObsUm: " + algo);
     }
 }
 
 class ObsDois implements Observador {
     @Override
     public void ocorreuMudanca(String algo) {
-        System.out.println("ObsDois: "+ algo);
+        System.out.println("ObsDois: " + algo);
     }
 }

@@ -1,13 +1,13 @@
 import java.math.BigDecimal;
 
 public class CapDois {
-  public static void main(String[] args){
-      ClasseSecundaria classeSecundaria = new ClasseSecundaria();
-      classeSecundaria.metodoGacho();
+    public static void main(String[] args) {
+        ClasseSecundaria classeSecundaria = new ClasseSecundaria();
+        classeSecundaria.metodoGacho();
 
-      ClasseAbstrata c = new ClasseConcreta();
-      c.metodoTemplate();
-  }
+        ClasseAbstrata c = new ClasseConcreta();
+        c.metodoTemplate();
+    }
 }
 
 // Padrão Null Object
