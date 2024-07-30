@@ -1,9 +1,4 @@
 // GERENCIANDO MUITOS OBJETOS
-public class CapNove {
-    public static void main(String[] args) {
-
-    }
-}
 
 // Padrão Facade
 // Encapsula a complexidade da interação entre os diversos componentes e desacopla o cliente
